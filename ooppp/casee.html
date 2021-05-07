@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+	<style>
+		table {
+			margin-left: 700px;
+			margin-top: 100px;
+		}
+		img {
+			width: 100px;
+			height: 50px;
+		}
+		table {
+			color: white;
+		}
+	</style>
+</head>
+<body background="6.jpg!d" >
+	<table style="color: white" >
+		<h2 style="text-align: center;">Sản Phẩm Phiên Bản Giới Hạn </h2>
+		
+		<tr>
+			<td>sản phẩm</td>
+			<td><input type="text" id="anh"></td>
+		</tr>
+		<tr>
+			<td>tên sản phẩm</td>
+			<td><input type="text" id="name"></td>
+		</tr>
+		<tr>
+			<td>giá</td>
+			<td><input type="text" id="money"></td>
+		</tr>
+		<tr>
+			<td>
+				<button onclick="themSanpham()">thêm sản phẩm</button>
+			</td>
+		</tr>
+	</table>
+	<table border="1" id="bảng 2">
+		<thead>
+		<tr>
+			<th>số thứ tự</th>
+			<th>sản phẩm </th>
+			<th>tên sản phẩm</th>
+			<th>đơn giá</th>
+			<th>delete</th>
+			<th>mua sản phẩm</th>
+		</tr>
+		</thead>
+		<tbody id="tbody">
+			
+		</tbody>
+	</table>
+		<div id="edit"></div>
+		<script>
+			class Sanpham {
+				constructor(id,sp,name,money) {
+					this.id= id;
+					this.sp=sp;
+					this.name=name;
+					this.money=money;
+				}
+			}
+			let sanpham1= new Sanpham(1,'bive.jpg','viên bive',300)
+			let sanpham2=new Sanpham(2,'u3.jpg','lá bài',100)
+			let sanpham3=new Sanpham(3 ,'pika.jpg','pc pokemon',500)
+			let sanpham4=new Sanpham(4,'magic.jpg','the magic',400)
+			let tbody = document.getElementById('tbody');
+			let cacSanpham =[sanpham1,sanpham2,sanpham3,sanpham4]
+			showlist()
+
+			function themSanpham() {
+				let id=cacSanpham.length +1
+
+				let sp =document.getElementById('anh').value
+				if (sp.length==0) {
+					alert('hãy điền đủ dữ liệu !')
+					return;
+				}
+				let name = document.getElementById('name').value
+				if (name.length==0) {
+					alert('hãy điền đủ dữ liệu !')
+					return;
+				}
+				let money=document.getElementById('money').value
+				if (money.length==0) {
+					alert('hãy điền đủ dữ liệu !')
+					return;
+				}
+				let sanPhammoi= new Sanpham(id,sp,name,money)
+				cacSanpham.push(sanPhammoi)
+				showlist()
+			}
+
+			function showlist() {
+				let str=''
+				for (let i = 0; i < cacSanpham.length; i++) {
+					str +='<tr>'
+					str +='<td>'+ cacSanpham[i].id + '</td>'
+
+					str +='<td><img src= "'+ cacSanpham[i].sp +'"></td>'
+
+					str += '<td>' + cacSanpham[i].name + '</td>'
+
+					str +='<td>'+ cacSanpham[i].money + '</td>'
+
+
+					str +='<td> <button onclick="deletesanpham('+i+')">xóa</button></td>'
+					
+					str +='<td> <button onclick="deletesanpham('+i+')">mua hàng</button></td>'
+					
+					str +='</tr>'
+					
+				}
+				document.getElementById('tbody').innerHTML=str
+			}
+			function deletesanpham(index) {
+				cacSanpham.splice(index,1)
+				showlist()
+
+
+			}
+			let gioHAng = []
+
+		</script>
+			<button onclick="gioHAng[]"> giỏ hàng </button>
+
+</body>
+</html>

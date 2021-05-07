@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+</head>
+<body>
+		<input type="text" name="a" id="dauvao">
+		<select name="" id="select1">
+			<option value="a">vietnam</option>
+			<option value="b">usd</option>
+		</select>
+		<select name="" id="select2">
+			<option value="a">vietnam</option>
+			<option value="b">usd</option>
+		</select>
+		<button onclick="lamgido()">convers</button>
+		<script type="text/javascript">
+			function lamgido () {
+				let giatrivao = document.getElementById('dauvao').value;
+				let select1 =document.getElementById('select1').value;
+				let select2 =document.getElementById('select2').value;
+				if (select1==select2){ 
+					alert(giatrivao);
+				}
+				if (select1=='a' && select2=='b'){
+					alert(giatrivao/23000);
+				}
+				if (select2='a' && select1=='b') {
+					alert(giatrivao*23000);
+				}
+			}
+		</script>
+</body>
+</html>

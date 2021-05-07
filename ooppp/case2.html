@@ -1,0 +1,59 @@
+  <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Quản lý sản phẩm</title>
+</head>
+<style>
+    td{
+        width: 200px;
+        height: 30px;
+    }
+</style>
+<body>
+<button onclick="addStudent()">Thêm sản phẩm </button>
+<table id="student-list" border="1px"></table>
+<script>
+    let students = [];
+    //Hiển thị học sinh
+    function displayStudent() { //Tên hàm phải là động từ vì nó chỉ 1 hành động nào đó
+        let str = '';
+        for (let i = 0; i < students.length; i++) {
+            str +='<tr>' +
+                '<td>'+students[i]+'</td>' +
+                '<td><button onclick="deleteStudent('+ i +')">Xóa</button></td>' +
+                '<td><button onclick="updateStudent('+ i +')">Sửa</button></td>' +
+                '</tr>';
+        }
+
+        document.getElementById('student-list').innerHTML = str;
+    }
+    displayStudent();
+
+    //Thêm học sinh
+    function addStudent() {
+        let student = prompt("Tên học sinh");
+        students.push(student);
+        displayStudent();
+    }
+    //Chỉnh sửa thông tin
+    function updateStudent(index) {
+        students[index] = prompt("Nhập tên mới của bạn này",students[index]);
+        displayStudent();
+    }
+
+    //Xóa học sinh
+    function deleteStudent(index) {
+        let check = confirm("Bạn có muốn xóa học sinh này không?");
+        if(check){
+            students.splice(index,1);
+            displayStudent();
+        }else {
+            alert("Thôi không xóa nữa");
+        }
+
+    }
+
+</script>
+</body>
+</html>

@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+  <!--  <form> tính tổng điểm và
+       <input type="text" id="toan">điểm toán<br>
+       <input type="text" id="hoa">điểm hóa<br>
+       <input type="text" id="sinh">điểm sinh<br>
+       <input type="button" onclick="tinhTong()" >tổng
+       <input type="button" onclick="tinhtb()">tính tb
+       <script>
+        function tinhTong() {
+            let toan= +document.getElementById('toan').value
+            let hoa=+document.getElementById('hoa').value
+            let sinh=+document.getElementById('sinh').value
+            sum=toan+hoa+sinh
+            alert(sum)
+        }
+         function tinhtb() {
+            let toan= +document.getElementById('toan').value
+            let hoa=+document.getElementById('hoa').value
+            let sinh=+document.getElementById('sinh').value
+            giatri=(toan+hoa+sinh)/3
+            alert(giatri)
+        }
+           
+       </script>
+   </form> -->
+   <!-- <input type="tetx" id="doc">độ c <br>
+  
+   <input type="button" onclick="chuyendoi()" >chuyendoi
+    <script>
+        function chuyendoi() {
+        let doc = document.getElementById('doc').value
+   
+        let dof=9*doc/5+32;
+        alert(dof)
+        }
+
+    
+    </script> -->
+    <!-- tính diện tích hình chữ nhật -->
+    <!-- <input type="text" id="cdai">chiều dài
+    <input type="text" id="crong">chiều rộng
+    <input type="button" onclick="tinhdt()">tính diện tích
+    <script>
+        function tinhdt() {
+            let a =+document.getElementById('cdai').value
+            let b =+document.getElementById('crong').value
+             S =a*b
+            alert(S)
+        }
+    </script> -->
+   <!--  <form>
+        <table>
+            <tr>
+                <td>số1</td>
+                <td><input type="text" id="so1"></td>
+            </tr>
+            <tr>
+                <td>số2</td>
+                <td><input type="text" id="so2"></td>
+            </tr>
+             <tr>
+                <td><input type="button" value="+" onclick=tingTong()></td>
+                <td><input type="button" value="x" onclick=tingTich()></td>
+                <td><input type="button" value="-" onclick=tingHieu()></td>
+                <td><input type="button" value="/" onclick=tingThuong()></td>
+            </tr>
+            <tr>
+                <td>ket qua</td>
+                <td><input type="text" id="ketqua" disabled="true"></td>
+            </tr>
+
+
+        </table>
+    </form>
+        <script>
+            function tingTong() {
+                let a=document.getElementById('so1').value;                
+                // if (a.length==0) {                             ktra dữ liệu nếu a còn trống thì báo lỗi
+                    alert("loi")
+                    return;
+                }
+                let b=+document.getElementById('so2').value;
+                // let tong =parseInt(a)+ parseInt(b);            bỏ dấu cộng để xét giá trị chuỗi nên phải gán kết quả với số nguyên ko sẽ thành dạng cộng chuỗi
+                Documentent.getElementById('ketqua').value = tong;
+                return tong; 
+            }
+            function tingTich() {
+                let a=+document.getElementById('so1').value;
+                let b=+document.getElementById('so2').value;
+                let tich = a*b;
+                document.getElementById('ketqua').value = tich;
+                return tich ; 
+            }
+            function tingHieu() {
+                let a=+document.getElementById('so1').value;
+                let b=+document.getElementById('so2').value;
+                let hieu = a-b;
+                document.getElementById('ketqua').value = hieu;
+                return hieu; 
+            }
+            function tingThuong() {
+                let a=+document.getElementById('so1').value;
+                let b=+document.getElementById('so2').value;
+                if (b==0) {
+                    alert('so bi chia phai lon hon 0')
+                    return;
+                }
+                let thuong = a/b;
+                document.getElementById('ketqua').value = thuong;
+                return thuong; 
+            }
+
+        </script> -->
+   
+</script>
+</body>
+</html>
